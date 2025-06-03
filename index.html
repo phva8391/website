@@ -9,31 +9,75 @@
 </head> 
 <body bgcolor="#000000" background="img/tile.jpg" text="#33ffcc" 
 link="#cc99ff" vlink="#66cccc" alink="#ff0066"> 
+<style>
+  .wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 2;
+  }
+
+  .flame {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .flame-top {
+    transform: rotate(0deg) translateY(-100%);
+  }
+
+  .flame-bottom {
+    transform: rotate(180deg) translateY(-100%);
+  }
+
+  .flame-left {
+    transform: rotate(-90deg) translateY(-100%);
+  }
+
+  .flame-right {
+    transform: rotate(90deg) translateY(-100%);
+  }
+</style>
+
 <center>
-  
-<img src="img/IMG_5773.JPG" style="
-  width: 1000px; 
-  height: 2000px; 
-  object-fit: cover; 
-  border-radius: 50%; 
-  border: 5px solid #000; 
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);">
-<br>
+  <div class="wrapper">
+    <img src="img/IMG_5773.JPG" class="profile-pic">
 
-<span style="font-size: 10em; color: #ffffff; text-shadow: 
-    -1px -1px 0 #000, 
-     1px -1px 0 #000, 
-    -1px  1px 0 #000, 
-     1px  1px 0 #000,
-    -2px  0px 0 #000, 
-     2px  0px 0 #000,
-     0px -2px 0 #000,
-     0px  2px 0 #000,
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000;">
-  Phillip G. Vaughn
-</span>
+    <img src="img/flame.gif" class="flame flame-top">
+    <img src="img/flame.gif" class="flame flame-bottom">
+    <img src="img/flame.gif" class="flame flame-left">
+    <img src="img/flame.gif" class="flame flame-right">
+  </div>
 
+  <br>
+
+  <span style="font-size: 10em; color: #ffffff; text-shadow: 
+      -1px -1px 0 #000, 
+       1px -1px 0 #000, 
+      -1px  1px 0 #000, 
+       1px  1px 0 #000,
+      -2px  0px 0 #000, 
+       2px  0px 0 #000,
+       0px -2px 0 #000,
+       0px  2px 0 #000,
+      -2px -2px 0 #000,
+       2px -2px 0 #000,
+      -2px  2px 0 #000,
+       2px  2px 0 #000;">
+    Phillip G. Vaughn
+  </span>
 </center>
