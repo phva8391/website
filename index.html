@@ -13,8 +13,8 @@ link="#cc99ff" vlink="#66cccc" alink="#ff0066">
   .wrapper {
     position: relative;
     display: inline-block;
-    margin-top: 300px;   /* Moves the image and flames down */
-    margin-bottom: 300px; /* Makes space for the name below */
+    margin-top: 300px;
+    margin-bottom: 300px;
   }
 
   .profile-pic {
@@ -34,29 +34,13 @@ link="#cc99ff" vlink="#66cccc" alink="#ff0066">
     height: 800px;
     top: 0;
     left: 0;
-    z-index: 1;
     pointer-events: none;
-  }
-
-  .flame-top {
-    transform: rotate(0deg) translateY(-100%);
-  }
-
-  .flame-bottom {
-    transform: rotate(180deg) translateY(-100%);
-  }
-
-  .flame-left {
-    transform: rotate(-90deg) translateY(-100%);
-  }
-
-  .flame-right {
-    transform: rotate(90deg) translateY(-100%);
+    z-index: 1;
   }
 
   .name-text {
     display: block;
-    margin-top: 100px;  /* Pushes name further down from image */
+    margin-top: 100px;
     font-size: 10em;
     color: #ffffff;
     text-shadow: 
@@ -79,10 +63,23 @@ link="#cc99ff" vlink="#66cccc" alink="#ff0066">
   <div class="wrapper">
     <img src="img/IMG_5773.JPG" class="profile-pic">
 
-    <img src="img/flame.gif" class="flame flame-top">
-    <img src="img/flame.gif" class="flame flame-bottom">
-    <img src="img/flame.gif" class="flame flame-left">
-    <img src="img/flame.gif" class="flame flame-right">
+    <!-- 16 Flames spaced every 22.5° -->
+    <img src="img/flame.gif" class="flame" style="transform: rotate(0deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(22.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(45deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(67.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(90deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(112.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(135deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(157.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(180deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(202.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(225deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(247.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(270deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(292.5deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(315deg) translateY(-100%);">
+    <img src="img/flame.gif" class="flame" style="transform: rotate(337.5deg) translateY(-100%);">
   </div>
 
   <span class="name-text">Phillip G. Vaughn</span>
