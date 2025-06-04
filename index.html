@@ -11,6 +11,11 @@
       100% { filter: hue-rotate(360deg); }
     }
 
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(var(--angle)) translateY(-100%); opacity: 0.8; }
+      50%      { transform: scale(1.2) rotate(var(--angle)) translateY(-100%); opacity: 0.3; }
+    }
+
     .wrapper {
       position: relative;
       display: inline-block;
@@ -38,7 +43,8 @@
       pointer-events: none;
       z-index: 1;
       transform-origin: 50% 50%;
-      animation: hueCycle 8s linear infinite;
+      animation: hueCycle 8s linear infinite, pulse 2s ease-in-out infinite;
+      mix-blend-mode: screen;
     }
 
     .name-text {
@@ -70,23 +76,23 @@
     <div class="wrapper">
       <img src="img/IMG_5773.JPG" class="profile-pic">
 
-      <!-- 16 color-shifting flames with staggered animation delays -->
-      <img src="img/flame.gif" class="flame" style="transform: rotate(0deg) translateY(-100%); animation-delay:0s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(22.5deg) translateY(-100%); animation-delay:0.3s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(45deg) translateY(-100%); animation-delay:0.6s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(67.5deg) translateY(-100%); animation-delay:0.9s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(90deg) translateY(-100%); animation-delay:1.2s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(112.5deg) translateY(-100%); animation-delay:1.5s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(135deg) translateY(-100%); animation-delay:1.8s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(157.5deg) translateY(-100%); animation-delay:2.1s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(180deg) translateY(-100%); animation-delay:2.4s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(202.5deg) translateY(-100%); animation-delay:2.7s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(225deg) translateY(-100%); animation-delay:3s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(247.5deg) translateY(-100%); animation-delay:3.3s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(270deg) translateY(-100%); animation-delay:3.6s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(292.5deg) translateY(-100%); animation-delay:3.9s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(315deg) translateY(-100%); animation-delay:4.2s;">
-      <img src="img/flame.gif" class="flame" style="transform: rotate(337.5deg) translateY(-100%); animation-delay:4.5s;">
+      <!-- 16 color-shifting, pulsing flames with fade effect -->
+      <img src="img/flame.gif" class="flame" style="--angle: 0deg; animation-delay:0s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 22.5deg; animation-delay:0.3s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 45deg; animation-delay:0.6s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 67.5deg; animation-delay:0.9s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 90deg; animation-delay:1.2s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 112.5deg; animation-delay:1.5s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 135deg; animation-delay:1.8s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 157.5deg; animation-delay:2.1s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 180deg; animation-delay:2.4s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 202.5deg; animation-delay:2.7s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 225deg; animation-delay:3s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 247.5deg; animation-delay:3.3s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 270deg; animation-delay:3.6s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 292.5deg; animation-delay:3.9s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 315deg; animation-delay:4.2s;">
+      <img src="img/flame.gif" class="flame" style="--angle: 337.5deg; animation-delay:4.5s;">
     </div>
 
     <span class="name-text">Phillip G. Vaughn</span>
