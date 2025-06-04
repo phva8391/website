@@ -1,120 +1,117 @@
-<html>
-<head>
-  <title>Phillip G. Vaughn</title> 
+@keyframes flameTint {
+  0%   { filter: brightness(1) sepia(1) hue-rotate(0deg) saturate(4); }
+  25%  { filter: brightness(1.2) sepia(1) hue-rotate(-10deg) saturate(5); }
+  50%  { filter: brightness(0.8) sepia(1) hue-rotate(15deg) saturate(6); }
+  75%  { filter: brightness(1.1) sepia(1) hue-rotate(0deg) saturate(4); }
+  100% { filter: brightness(1) sepia(1) hue-rotate(-10deg) saturate(5); }
+}
+  100% { filter: hue-rotate(360deg); }
+}
 
-  <meta name="description" content="Phillip G. Vaughn's personal website"> 
-  <meta name="keywords" content="Phillip Vaughn, Phillip G. Vaughn, Philip G. Vaughn, Philip Vaughn, Engineering, website, CU boulder, University of Colorado Boulder">
+@keyframes pulse {
+  0%, 100% { transform: scale(1) rotate(var(--angle)) translateY(-100%); opacity: 0.8; }
+  50%      { transform: scale(1.2) rotate(var(--angle)) translateY(-100%); opacity: 0.3; }
+}
 
-  <style>
-    @keyframes hueCycle {
-      0%   { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
+.wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1) rotate(var(--angle)) translateY(-100%); opacity: 0.8; }
-      50%      { transform: scale(1.2) rotate(var(--angle)) translateY(-100%); opacity: 0.3; }
-    }
+.profile-pic {
+  width: 800px;
+  height: 800px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 2;
+}
 
-    .wrapper {
-      position: relative;
-      display: inline-block;
-      margin-top: 150px;
-      margin-bottom: 150px;
-    }
+.flame {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  transform-origin: 50% 50%;
+  animation: flameTint 6s linear infinite, pulse 2s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
 
-    .profile-pic {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #000;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-      position: relative;
-      z-index: 2;
-    }
-
-    .flame {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1;
-      transform-origin: 50% 50%;
-      animation: hueCycle 8s linear infinite, pulse 2s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-
-    .name-text {
-      display: block;
-      margin-top: 100px;
-      font-size: 5em;
-      color: #ffffff;
-      text-shadow: 
-        -1px -1px 0 #000, 
-         1px -1px 0 #000, 
-        -1px  1px 0 #000, 
-         1px  1px 0 #000,
-        -2px  0px 0 #000, 
-         2px  0px 0 #000,
-         0px -2px 0 #000,
-         0px  2px 0 #000,
-        -2px -2px 0 #000,
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000;
-    }
-  </style>
+.name-text {
+  display: block;
+  margin-top: 100px;
+  font-size: 10em;
+  color: #ffffff;
+  text-shadow: 
+    -1px -1px 0 #000, 
+     1px -1px 0 #000, 
+    -1px  1px 0 #000, 
+     1px  1px 0 #000,
+    -2px  0px 0 #000, 
+     2px  0px 0 #000,
+     0px -2px 0 #000,
+     0px  2px 0 #000,
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+</style>
 </head>
 
 <body bgcolor="#000000" background="img/tile.jpg" text="#33ffcc" 
-      link="#cc99ff" vlink="#66cccc" alink="#ff0066"> 
+  link="#cc99ff" vlink="#66cccc" alink="#ff0066"> 
 
-  <center>
-    <div class="wrapper">
-      <img src="img/IMG_5773.JPG" class="profile-pic">
+<center>
+<div class="wrapper">
+  <img src="img/IMG_5773.JPG" class="profile-pic">
 
-      <!-- 32 color-shifting, pulsing flames with fade effect -->
-      <!-- Existing 16 flames -->
-      <img src="img/flame.gif" class="flame" style="--angle: 0deg; animation-delay:0s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 22.5deg; animation-delay:0.3s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 45deg; animation-delay:0.6s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 67.5deg; animation-delay:0.9s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 90deg; animation-delay:1.2s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 112.5deg; animation-delay:1.5s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 135deg; animation-delay:1.8s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 157.5deg; animation-delay:2.1s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 180deg; animation-delay:2.4s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 202.5deg; animation-delay:2.7s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 225deg; animation-delay:3s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 247.5deg; animation-delay:3.3s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 270deg; animation-delay:3.6s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 292.5deg; animation-delay:3.9s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 315deg; animation-delay:4.2s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 337.5deg; animation-delay:4.5s;">
-      <!-- Additional 16 flames to complete 32 around the circle -->
-      <img src="img/flame.gif" class="flame" style="--angle: 11.25deg; animation-delay:0.15s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 33.75deg; animation-delay:0.45s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 56.25deg; animation-delay:0.75s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 78.75deg; animation-delay:1.05s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 101.25deg; animation-delay:1.35s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 123.75deg; animation-delay:1.65s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 146.25deg; animation-delay:1.95s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 168.75deg; animation-delay:2.25s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 191.25deg; animation-delay:2.55s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 213.75deg; animation-delay:2.85s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 236.25deg; animation-delay:3.15s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 258.75deg; animation-delay:3.45s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 281.25deg; animation-delay:3.75s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 303.75deg; animation-delay:4.05s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 326.25deg; animation-delay:4.35s;">
-      <img src="img/flame.gif" class="flame" style="--angle: 348.75deg; animation-delay:4.65s;">
-    </div>
+  <!-- 32 color-shifting, pulsing flames with fade effect -->
+  <!-- Existing 16 flames -->
+  <img src="img/flame.gif" class="flame" style="--angle: 0deg; animation-delay:0s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 22.5deg; animation-delay:0.3s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 45deg; animation-delay:0.6s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 67.5deg; animation-delay:0.9s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 90deg; animation-delay:1.2s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 112.5deg; animation-delay:1.5s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 135deg; animation-delay:1.8s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 157.5deg; animation-delay:2.1s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 180deg; animation-delay:2.4s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 202.5deg; animation-delay:2.7s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 225deg; animation-delay:3s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 247.5deg; animation-delay:3.3s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 270deg; animation-delay:3.6s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 292.5deg; animation-delay:3.9s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 315deg; animation-delay:4.2s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 337.5deg; animation-delay:4.5s;">
+  <!-- Additional 16 flames to complete 32 around the circle -->
+  <img src="img/flame.gif" class="flame" style="--angle: 11.25deg; animation-delay:0.15s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 33.75deg; animation-delay:0.45s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 56.25deg; animation-delay:0.75s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 78.75deg; animation-delay:1.05s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 101.25deg; animation-delay:1.35s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 123.75deg; animation-delay:1.65s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 146.25deg; animation-delay:1.95s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 168.75deg; animation-delay:2.25s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 191.25deg; animation-delay:2.55s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 213.75deg; animation-delay:2.85s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 236.25deg; animation-delay:3.15s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 258.75deg; animation-delay:3.45s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 281.25deg; animation-delay:3.75s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 303.75deg; animation-delay:4.05s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 326.25deg; animation-delay:4.35s;">
+  <img src="img/flame.gif" class="flame" style="--angle: 348.75deg; animation-delay:4.65s;">
+</div>
 
-    <span class="name-text">Phillip G. Vaughn</span>
-  </center>
+<span class="name-text">Phillip G. Vaughn</span>
+</center>
 
 </body>
 </html>
